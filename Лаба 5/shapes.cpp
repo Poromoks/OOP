@@ -1,6 +1,6 @@
 #include "Shapes.h"
 
-Shapes::Shapes() {
+Shapes::Shapes(int MoveSpeed, int RotateSpeed) {
     x = rand() % 800 + 1;
     y = rand() % 600 + 1;
     dx = rand() % 3 - 1;
@@ -16,7 +16,8 @@ Shapes::Shapes() {
             dy = 1;
         }
     }
-    moveSpeed = rotateSpeed = 5;
+    moveSpeed = MoveSpeed;
+    rotateSpeed = RotateSpeed;
     buffer.loadFromFile("sounds/bwonk.ogg");
     bwonk.setBuffer(buffer);
 }
@@ -36,10 +37,10 @@ Segment::Segment() {
 }
 
 Circle::Circle() {
-    circle = new CircleShape(10);
+    circle = new CircleShape(20);
     circle->setFillColor(Color(rand() % 255 + 1, rand() % 255 + 1, rand() % 255 + 1));
     circle->setPosition(x, y);
-    circle->setOrigin(10, 10);
+    circle->setOrigin(20, 20);
 }
 
 Rectangle::Rectangle() {

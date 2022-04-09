@@ -5,7 +5,7 @@ using namespace sf;
 
 class Shapes {
 public:
-    Shapes();
+    Shapes(int MoveSpeed = 5, int RotateSpeed = 5);
     virtual void Move();
     virtual Shape* GetShape() const;
 
